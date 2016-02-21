@@ -15,7 +15,21 @@ npm install
 node server.js
 ```
 
-And visit <http://localhost:3000/>. Try opening multiple tabs!
+And visit <http://localhost:3000/>.
+
+### Webpack
+
+This project is using webpack to bundle javascript files.
+
+```sh
+webpack
+```
+or
+
+```sh
+npm build
+```
+
 
 ## Changing the port
 
