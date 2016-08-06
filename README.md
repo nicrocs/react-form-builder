@@ -1,12 +1,12 @@
 
 
-# React Question
+# React Form Builder
 
-This is questions/form builder example based on [the React tutorial](http://facebook.github.io/react/docs/tutorial.html).
+This is a questions/form builder example app using node and react.
 
 ## To use
 
-There are several simple server implementations included. They all serve static files from `public/` and handle requests to `/api/questions` to fetch or add data. Start a server with Node:
+There is a simple node server implementation included. It serves static files from `public/` and handles requests to `/api/questions` to fetch or add data. Start a server with Node:
 
 ### Node
 
