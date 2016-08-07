@@ -1,24 +1,5 @@
 [
     {
-        "id": 1456000625379,
-        "type": "multiple_choice",
-        "label": "Test Choose Multi",
-        "choices": [
-            {
-                "id": "0",
-                "text": "Choice 1"
-            },
-            {
-                "id": "1",
-                "text": "Choice 2"
-            },
-            {
-                "id": "2",
-                "text": "Choice 3"
-            }
-        ]
-    },
-    {
         "id": 1456003359026,
         "type": "single_choice",
         "label": "Choose 1",
@@ -49,17 +30,6 @@
             {
                 "id": "2",
                 "text": "test 3"
-            }
-        ]
-    },
-    {
-        "id": 1456004085566,
-        "type": "single_choice",
-        "label": "test",
-        "choices": [
-            {
-                "id": "0",
-                "text": "You only get one"
             }
         ]
     },
@@ -127,5 +97,15 @@
                 "text": "Choice 3"
             }
         ]
+    },
+    {
+        "id": 1470591033582,
+        "type": "short_answer",
+        "label": "What is your name?"
+    },
+    {
+        "id": 1470607036044,
+        "type": "short_answer",
+        "label": "Test redux"
     }
 ]
