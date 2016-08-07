@@ -33,12 +33,15 @@ app.post('/api/questions/', function(req, res) {
     var questions = JSON.parse(data);
 
     var newQuestion = {
-      id: Date.now(),
+      id: req.body.id,
       type: req.body.type,
       label: req.body.label,
       choices: req.body.choices
     };
-    questions.push(newQuestion);
+    if (req.body.id) {
+      questions.push(newQuestion);
+    }
+
     fs.writeFile(QUESTIONS_FILE, JSON.stringify(questions, null, 4), function(err) {
       if (err) {
         console.error(err);

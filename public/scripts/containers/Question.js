@@ -1,8 +1,8 @@
 import React from 'react';
-import ShortAnswer from './ShortAnswer.js';
-import LongAnswer from './LongAnswer.js';
-import MultipleChoice from './MultipleChoice.js';
-import SingleChoice from './singleChoice.js';
+import ShortAnswer from '../components/ShortAnswer.js';
+import LongAnswer from '../components/LongAnswer.js';
+import MultipleChoice from '../components/MultipleChoice.js';
+import SingleChoice from '../components/singleChoice.js';
 
 var Question = React.createClass({
   render: function() {
