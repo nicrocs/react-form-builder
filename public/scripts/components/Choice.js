@@ -1,5 +1,5 @@
 import React from 'react';
-var Choice = function(props) {
+function Choice(props) {
     return (
       <div className="choice">
         <input type={props.type} value={props.text} name={props.type}/>

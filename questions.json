@@ -104,8 +104,22 @@
         "label": "What is your name?"
     },
     {
-        "id": 1470607036044,
-        "type": "short_answer",
-        "label": "Test redux"
+        "id": 1470628527963,
+        "type": "multiple_choice",
+        "label": "Multiple Choice",
+        "choices": [
+            {
+                "id": 0,
+                "text": "This"
+            },
+            {
+                "id": 1,
+                "text": "That"
+            },
+            {
+                "id": 2,
+                "text": "The Other"
+            }
+        ]
     }
 ]

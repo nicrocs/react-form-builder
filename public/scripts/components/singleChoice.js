@@ -1,12 +1,11 @@
 import React from 'react';
 import Choice from './Choice.js';
-var SingleChoice = function(props) {
-  var choiceNodes = props.choices.map(function(choice) {
-    return (
+function SingleChoice(props) {
+  var choiceNodes = props.choices.map(choice => (
       <Choice key={choice.id} type="radio" text={choice.text}>
       </Choice>
-    );
-  });
+    )
+  );
   return (
     <div className="question">
       <fieldset>
