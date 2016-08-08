@@ -4,7 +4,7 @@ import { postQuestionIfNeeded, fetchQuestionsIfNeeded, deleteQuestionIfNeeded } 
 import QuestionForm from './QuestionForm';
 import QuestionList from './QuestionList';
 
-class FormBuilder extends React.Component{
+class FormBuilder extends Component{
   constructor(props) {
     super(props);
     this.handleQuestionSubmit = this.handleQuestionSubmit.bind(this);

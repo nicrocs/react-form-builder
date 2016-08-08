@@ -1,61 +1,68 @@
 import React from 'react';
 import ChoiceInput from './ChoiceInput';
 import QuestionPreview from './QuestionPreview';
-var QuestionForm = React.createClass({
-  getInitialState: function() {
-      return {question: {}};
-  },
-  handleLabelChange: function(event) {
+
+class QuestionForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      question: {},
+    }
+    this.handleLabelChange = this.handleLabelChange.bind(this);
+    this.handleTypeChange = this.handleTypeChange.bind(this);
+    this.handleChoices = this.handleChoices.bind(this);
+    this.addChoice = this.addChoice.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleLabelChange(event) {
     this.state.question.label = event.target.value;
     this.setState({question: this.state.question});
-  },
-  handleTypeChange: function(e) {
-      this.state.question.type = e.target.value;
-
-      if (e.target.value === "single_choice" || e.target.value === "multiple_choice") {
-        this.state.question.choices = [{
-          id:0,
-          text:""
-        }]
-      }
+  }
+  handleTypeChange(e) {
+    this.state.question.type = e.target.value;
+    if (e.target.value === "single_choice" || e.target.value === "multiple_choice") {
+      this.state.question.choices = [{
+        id:0,
+        text:""
+      }]
+    }
 
     this.setState({question:this.state.question});
-  },
-  handleChoices: function(choiceValue, id){
-      var choices = this.state.question.choices.map(function(choice){
-        if (choice.id === id) {
-          return {id: id, text:choiceValue};
-        } else {
-          return choice
-        }
-      });
-      this.state.question.choices = choices;
-      this.setState({question: this.state.question});
-  },
-  addChoice: function() {
-      var choiceId = this.state.question.choices.length;
-      this.state.question.choices.push({
-        id:choiceId,
-        text:""
-      });
-      this.setState({question: this.state.question})
-  },
-  removeChoice: function(id) {
-    var choices = this.state.question.choices.filter(function(choice){
-        return choice.id !== id;
+  }
+  handleChoices(choiceValue, id) {
+    const choices = this.state.question.choices.map(choice => {
+      if (choice.id === id) {
+        return {id: id, text:choiceValue};
+      } else {
+        return choice
+      }
     });
     this.state.question.choices = choices;
     this.setState({question: this.state.question});
-  },
-  handleSubmit: function(e) {
-      e.preventDefault();
-      this.props.QuestionSubmit(this.state.question);
-      e.target.reset();
-      this.setState({question:{}});
-  },
-
-  render: function() {
-    var choices = (this.state.question.type === "single_choice" || this.state.question.type === "multiple_choice");
+  }
+  addChoice() {
+    const choiceId = this.state.question.choices.length;
+    this.state.question.choices.push({
+      id:choiceId,
+      text:""
+    });
+    this.setState({question: this.state.question});
+  }
+  removeChoice(id) {
+    const choices = this.state.question.choices.filter(choice =>
+      choice.id !== id
+    );
+    this.state.question.choices = choices;
+    this.setState({question: this.state.question});
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.QuestionSubmit(this.state.question);
+    e.target.reset();
+    this.setState({question:{}});
+  }
+  render() {
+    const choices = (this.state.question.type === "single_choice" || this.state.question.type === "multiple_choice");
     return (
       <form className="questionForm" onSubmit={this.handleSubmit}>
         <select onChange={this.handleTypeChange} value={this.props.type}>
@@ -85,5 +92,6 @@ var QuestionForm = React.createClass({
       </form>
     );
   }
-});
+};
+
 export default QuestionForm;

@@ -1,5 +1,5 @@
 import React from 'react';
-var LongAnswer = function(props) {
+function LongAnswer(props) {
   return(
     <div className="question">
       <label className="questionLabel">

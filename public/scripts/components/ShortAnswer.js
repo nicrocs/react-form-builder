@@ -1,5 +1,5 @@
 import React from 'react';
-var ShortAnswer = function(props) {
+function ShortAnswer(props) {
   return(
     <div className="question">
       <label className="questionLabel">

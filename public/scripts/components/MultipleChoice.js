@@ -1,6 +1,6 @@
 import React from 'react';
 import Choice from './Choice.js';
-var MultipleChoice = function(props) {
+function MultipleChoice(props) {
   var choiceNodes = props.choices.map(function(choice) {
     return (
       <Choice key={choice.id} type="checkbox" text={choice.text}>
